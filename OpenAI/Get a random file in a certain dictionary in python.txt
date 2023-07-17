@@ -1,0 +1,17 @@
+import os
+import random
+
+directory = '/path/to/directory'  # Replace with the actual directory path
+
+# Get a list of all files in the directory
+files = os.listdir(directory)
+
+# Filter out directories and retrieve only files
+files = [file for file in files if os.path.isfile(os.path.join(directory, file))]
+
+if files:
+    # Select a random file from the list
+    random_file = random.choice(files)
+    print("Random file:", random_file)
+else:
+    print("No files found in the directory.")
